@@ -85,7 +85,7 @@ export default function Home() {
           Restaurant Near You
         </h1>
         <div className='grid md:grid-cols-4 md:gap-3 grid-cols-2 gap-1 my-8'>
-          {Partner?.slice(0, 4).map((item) => (
+          {shop?.slice(0, 4).map((item) => (
             <div
               key={item.id}
               onClick={
@@ -97,14 +97,14 @@ export default function Home() {
                 <div>
                   <img
                     className='rounded-lg w-full p-3'
-                    src={item.menus[0]?.menuImage}
+                    src={item.products[0]?.image}
                     alt='menu'
                   />
                 </div>
 
                 <div className='px-5'>
                   <h5 className='mb-2 md:text-xl font-bold tracking-tight text-gray-900 font-mainFont'>
-                    {item.menus[0]?.menuName}
+                    {item.products[0]?.title}
                   </h5>
 
                   <p className='mb-3 md:font-xl text-xs text-gray-700 '>
