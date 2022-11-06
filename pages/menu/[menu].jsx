@@ -83,7 +83,7 @@ export default function Menu() {
               <Card>
                 <div>
                   <img
-                    className='rounded-lg w-full p-3'
+                    className='rounded-lg w-full h-40 p-3 object-cover'
                     src={item.image}
                     alt='menu'
                   />

@@ -9,7 +9,7 @@ import Modal from "../modal";
 import Menu from "./menu";
 import { API } from "../../pages/api/api";
 
-export default function Navbar({ showLogin, setShowLogin, counter }) {
+export default function Navbar({ showLogin, setShowLogin }) {
   const [auth, setAuth] = useContext(UserContext);
   const isLogin = auth.isLogin;
 
@@ -24,23 +24,23 @@ export default function Navbar({ showLogin, setShowLogin, counter }) {
     setShowLogin(true);
   };
 
-  // const [count, setCount] = useState();
+  const [count, setCount] = useState();
 
-  // useEffect(() => {
-  //   if (isLogin) {
-  //     try {
-  //       const getCount = async (e) => {
-  //         const response = await API.get("/cart-status");
-  //         setCount(response.data.data);
-  //       };
-  //       getCount();
-  //     } catch (error) {}
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (isLoginauth.user.role == "customer") {
+      try {
+        const getCount = async (e) => {
+          const response = await API.get("/cart-status");
+          setCount(response.data.data);
+        };
+        getCount();
+      } catch (error) {}
+    }
+  }, [count]);
 
-  // const counters = count?.order?.reduce((a, b) => {
-  //   return a + b.qty;
-  // }, 0);
+  const counters = count?.order?.reduce((a, b) => {
+    return a + b.qty;
+  }, 0);
 
   return (
     <Fragment>
@@ -65,15 +65,15 @@ export default function Navbar({ showLogin, setShowLogin, counter }) {
                   className={
                     auth.user.role === "partner"
                       ? "hidden"
-                      : counter === null
+                      : counters === null
                       ? "hidden"
-                      : counter === undefined
+                      : counters === undefined
                       ? "hidden"
-                      : counter === 0
+                      : counters === 0
                       ? "hidden"
                       : "circle z-40"
                   }>
-                  {counter}
+                  {counters}
                 </div>
                 {/* <div
                   className={

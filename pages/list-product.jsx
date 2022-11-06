@@ -79,7 +79,11 @@ export default function ListProduct() {
                     <td
                       scope='row'
                       className='py-4 px-6 font-medium whitespace-nowrap'>
-                      <img src={item.image} width={150} alt='product' />
+                      <img
+                        src={item.image}
+                        alt='product'
+                        className='w-32 h-32 rounded-md'
+                      />
                     </td>
                     <td className='py-4 px-6'>{item.title}</td>
                     <td className='py-4 px-6'>{Rp.convert(item.price)}</td>
