@@ -96,7 +96,7 @@ export default function Home() {
               <Card>
                 <div>
                   <img
-                    className='rounded-lg w-full h-14 p-3 object-cover'
+                    className='rounded-lg w-full h-40 p-3 object-cover'
                     src={item.products[0]?.image}
                     alt='menu'
                   />
