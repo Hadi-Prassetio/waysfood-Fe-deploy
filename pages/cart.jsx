@@ -22,6 +22,13 @@ export default function Cart() {
     const getCart = async (e) => {
       try {
         const response = await API.get("/cart-status");
+        // console.log("res", response);
+        // const unique = [
+        //   ...new Map(
+        //     response.data.data.order.map((item) => [item.product.id, item])
+        //   ).values(),
+        // ];
+        // console.log("unique", unique);
         setCart(response.data.data);
       } catch (error) {
         console.log(error);
@@ -143,7 +150,7 @@ export default function Cart() {
   }, []);
 
   return (
-    <Layout pageTitle='Cart'>
+    <Layout pageTitle='Cart' counter={totalQty}>
       <div className='container max-w-6xl'>
         {cart == undefined ? (
           <div className='flex my-20 justify-center'>

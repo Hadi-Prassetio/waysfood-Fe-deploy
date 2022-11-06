@@ -9,7 +9,7 @@ import Modal from "../modal";
 import Menu from "./menu";
 import { API } from "../../pages/api/api";
 
-export default function Navbar({ showLogin, setShowLogin }) {
+export default function Navbar({ showLogin, setShowLogin, counter }) {
   const [auth, setAuth] = useContext(UserContext);
   const isLogin = auth.isLogin;
 
@@ -27,7 +27,7 @@ export default function Navbar({ showLogin, setShowLogin }) {
   const [count, setCount] = useState();
 
   useEffect(() => {
-    if (isLoginauth.user.role == "customer") {
+    if (isLogin) {
       try {
         const getCount = async (e) => {
           const response = await API.get("/cart-status");
@@ -36,7 +36,7 @@ export default function Navbar({ showLogin, setShowLogin }) {
         getCount();
       } catch (error) {}
     }
-  }, [count]);
+  }, []);
 
   const counters = count?.order?.reduce((a, b) => {
     return a + b.qty;
@@ -65,15 +65,15 @@ export default function Navbar({ showLogin, setShowLogin }) {
                   className={
                     auth.user.role === "partner"
                       ? "hidden"
-                      : counters === null
+                      : counter === null
                       ? "hidden"
-                      : counters === undefined
+                      : counter === undefined
                       ? "hidden"
-                      : counters === 0
+                      : counter === 0
                       ? "hidden"
                       : "circle z-40"
                   }>
-                  {counters}
+                  {counter}
                 </div>
                 {/* <div
                   className={
