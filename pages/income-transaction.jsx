@@ -50,9 +50,9 @@ export default function IncomeTransaction() {
                       Status
                     </th>
                   </tr>
-                </thead>{" "}
+                </thead>
                 {income?.map((item, index) => (
-                  <tbody key={index}>
+                  <tbody key={item.id}>
                     <tr className='border-b bg-white'>
                       <td className='py-4 px-6'>{index + 1}</td>
                       <td
@@ -63,7 +63,7 @@ export default function IncomeTransaction() {
                       <td className='py-4 px-6'>{item.buyer.location}</td>
                       <td className='py-4 px-6 flex'>
                         {item.cart.order.map((list) => (
-                          <p> {list.product.title}, </p>
+                          <p key={item.id}> {list.product.title}, </p>
                         ))}
                       </td>
                       <td className='py-4 px-6'>{RP.convert(item.total)}</td>
