@@ -75,7 +75,7 @@ export default function Navbar({ showLogin, setShowLogin, counter }) {
                   }>
                   {counter}
                 </div>
-                {/* <div
+                <div
                   className={
                     auth.user.role === "partner"
                       ? "hidden"
@@ -88,7 +88,7 @@ export default function Navbar({ showLogin, setShowLogin, counter }) {
                       : "circle z-30"
                   }>
                   {counters}
-                </div> */}
+                </div>
 
                 <Menu />
               </div>
