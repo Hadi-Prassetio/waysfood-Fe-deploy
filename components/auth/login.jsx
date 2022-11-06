@@ -31,7 +31,11 @@ export default function Login() {
       };
       const body = JSON.stringify(user);
 
-      const response = await API.post("/login", body, config);
+      const response = await API.post(
+        "https://hadip-waysfood.herokuapp.com/api/v1/login",
+        body,
+        config
+      );
       Success({ message: `Login Success!` });
       if (response?.status === 200) {
         setAuth({

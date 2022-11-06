@@ -22,6 +22,7 @@ export default function Register() {
       Success({ message: "Success Register" });
     } catch (error) {
       Error({ message: "Failed Register" });
+      console.log("apiii", API);
     }
   });
 
