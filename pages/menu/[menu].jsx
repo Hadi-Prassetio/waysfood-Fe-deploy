@@ -67,7 +67,11 @@ export default function Menu() {
     <Layout pageTitle='Menu'>
       <div className='container max-w-6xl '>
         <div className=' mt-10 mb-15 flex'>
-          <img src={detail?.image} alt='logo' width={70} />
+          <img
+            src={detail?.image}
+            alt='logo'
+            className='w-14 h-14 rounded-full object-cover object-center'
+          />
           <h1 className='md:text-4xl font-bold flex items-center ml-2 font-mainFont'>
             {detail?.fullname}, Menus
           </h1>

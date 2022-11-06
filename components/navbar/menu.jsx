@@ -47,9 +47,8 @@ export default function MenuUser() {
             <div className=''>
               <img
                 src={profile?.image == "" ? "/user.png" : profile?.image}
-                width={50}
                 alt='user'
-                className='rounded-full'
+                className='w-12 h-12 rounded-full object-cover object-center'
               />
             </div>
           </button>

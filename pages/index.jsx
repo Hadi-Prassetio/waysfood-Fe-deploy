@@ -70,7 +70,11 @@ export default function Home() {
               className='flex p-6 max-w-sm bg-white rounded-lg border
               border-gray-200 shadow-md hover:bg-main/50 active:bg-main/70
               cursor-pointer'>
-              <img src={item.image} alt='shop' width={70} />
+              <img
+                src={item.image}
+                alt='shop'
+                className='w-14 h-14 rounded-full object-cover object-center'
+              />
               <h1 className='mb-2 md:text-2xl font-bold tracking-tight text-gray-900 mx-3 flex items-center font-mainFont'>
                 {item.fullname}
               </h1>
