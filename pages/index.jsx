@@ -59,7 +59,7 @@ export default function Home() {
           Popular Restaurant
         </h1>
         <div className='grid md:grid-cols-4 md:gap-3 grid-cols-2 gap-1 my-8'>
-          {shop?.map((item) => (
+          {shop?.slice(0, 4).map((item) => (
             <div
               key={item.id}
               onClick={
@@ -85,7 +85,7 @@ export default function Home() {
           Restaurant Near You
         </h1>
         <div className='grid md:grid-cols-4 md:gap-3 grid-cols-2 gap-1 my-8'>
-          {shop?.slice(0, 4).map((item) => (
+          {shop?.map((item) => (
             <div
               key={item.id}
               onClick={
